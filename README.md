@@ -75,3 +75,8 @@ export default defineConfig([
 ## DEV DEP
 
     npm i tailwindcss @tailwindcss/vite
+    npm i react-hook-form
+
+## Docs
+
+https://react-hook-form.com/get-started
