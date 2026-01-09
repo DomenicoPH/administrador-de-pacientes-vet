@@ -71,3 +71,7 @@ export default defineConfig([
   },
 ])
 ```
+
+## DEV DEP
+
+    npm i tailwindcss @tailwindcss/vite
