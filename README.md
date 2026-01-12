@@ -76,6 +76,8 @@ export default defineConfig([
 
     npm i tailwindcss @tailwindcss/vite
     npm i react-hook-form
+    npm i uuid
+    npm i --save-dev @types/uuid
 
 ## Docs
 
