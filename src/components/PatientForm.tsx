@@ -1,14 +1,17 @@
 import { useForm, type SubmitHandler } from "react-hook-form";
 import Error from "./Error";
 import type { DraftPatient, Patient } from "../types";
+import { usePatientStore } from "../store";
 
 export default function PatientForm() {
+
+  //const {addPatient} = usePatientStore(); // *Esta linea equivale a la siguiente
+  const addPatient = usePatientStore(state => state.addPatient);
+
   const { register, handleSubmit, formState: { errors } } = useForm<DraftPatient>();
 
-  const registerPatient: SubmitHandler<DraftPatient> = ( data, event ) => {
-    console.log("Nuevo paciente registrado");
-    console.log("Event: " , event)
-    console.log("Data: " , data)
+  const registerPatient: SubmitHandler<DraftPatient> = ( data ) => {
+    addPatient(data);
   };
 
   return (

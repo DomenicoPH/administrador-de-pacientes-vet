@@ -79,4 +79,8 @@ export default defineConfig([
 
 ## Docs
 
+### React Hook Forms (docs)
 https://react-hook-form.com/get-started
+https://react-hook-form.com/ts
+https://react-hook-form.com/docs/useform
+https://github.com/react-hook-form/react-hook-form/tree/master/src/types
