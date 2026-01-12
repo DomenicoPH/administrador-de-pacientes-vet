@@ -10,13 +10,9 @@ export default function PatientForm() {
   const addPatient = usePatientStore(state => state.addPatient);
   const activeId = usePatientStore(state => state.activeId);
   const patients = usePatientStore(state => state.patients);
+  const updatePatient = usePatientStore(state => state.updatePatient);
 
   const { register, handleSubmit, setValue, formState: { errors }, reset } = useForm<DraftPatient>();
-
-  const registerPatient: SubmitHandler<DraftPatient> = ( data ) => {
-    addPatient(data);
-    reset();
-  };
 
   useEffect(() => {
     if(activeId){
@@ -27,7 +23,16 @@ export default function PatientForm() {
       setValue('date', activePatient.date)
       setValue('symptoms', activePatient.symptoms)
     }
-  }, [activeId])
+  }, [activeId]);
+
+  const registerPatient: SubmitHandler<DraftPatient> = ( data ) => {
+    if(activeId){
+      updatePatient(data);
+    } else {
+      addPatient(data);
+    }
+    reset();
+  };
 
   return (
     <div className="md:w-1/2 lg:w-2/5 mx-5">
